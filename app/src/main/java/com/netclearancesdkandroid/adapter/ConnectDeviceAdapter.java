@@ -82,10 +82,10 @@ public class ConnectDeviceAdapter extends RecyclerView.Adapter<ConnectDeviceAdap
 
         if (model.is_connected()) {
             holder.tv_connect_btn.setText("Disconnect");
-            holder.tv_connect_btn.setTextColor(context.getColor(R.color.black));
+            holder.tv_connect_btn.setTextColor(context.getResources().getColor(R.color.black));
         } else {
             holder.tv_connect_btn.setText("Connect");
-            holder.tv_connect_btn.setTextColor(context.getColor(R.color.white));
+            holder.tv_connect_btn.setTextColor(context.getResources().getColor(R.color.white));
         }
 
         holder.tv_connect_btn.setOnClickListener(new View.OnClickListener() {
