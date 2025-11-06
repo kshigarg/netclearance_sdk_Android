@@ -1,5 +1,8 @@
 plugins {
-    id 'com.android.application'
+   // id 'com.android.application'
+    id 'com.android.library'
+    id 'maven-publish'
+
 }
 
 android {
@@ -50,4 +53,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation project(path: ':netclearance_ble_sdk')
 
+}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.kshigarg'
+                artifactId = 'netclearance_sdk_Android'
+                version = '1.0.10'
+            }
+        }
+    }
 }
